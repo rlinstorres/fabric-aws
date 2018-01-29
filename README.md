@@ -3,7 +3,7 @@
 - Script para rodar comandos em instâncias da AWS
 
 Exemplo de fabric file para rodar comandos em instâncias da AWS.
-Utiliza roles para filtrar as instâncias
+Utiliza roles para filtrar as instâncias.
 
 http://www.fabfile.org/
 
@@ -15,19 +15,19 @@ pip install fabric boto
 
 ##### Exemplos de Uso:
 
-Executa a task hostname para todas as maquinas da AWS. O role 'all' contem todas as maquinas
+Executa a task hostname para todas as máquinas da AWS. O role 'all' contem todas as máquinas:
 
 ```
 fab -R all hostname
 ```
 
-Faz o mesmo acima, porem em paralelo, limitando em 4 operacoes concorrentes:
+Faz o mesmo acima, porém em paralelo, limitando em 4 operacoes concorrentes:
 
 ```
 fab -R all -P -z 4 hostname
 ```
 
-Executa o comando parametrizavel de hello world em paralelo para as maquinas que tem o nome 'teste-1':
+Executa o comando parametrizavel de hello world em paralelo para as máquinas que tem o nome 'teste-1':
 
 ```
 fab -R teste-1 -P hello:what=World
